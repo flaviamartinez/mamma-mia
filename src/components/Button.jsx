@@ -5,7 +5,7 @@ const Button = ( {iconButton, textButton, displayButton} ) => {
 		return null;
 	  }
   return (
-	<button>
+	<button className="custom-button">
 		{iconButton && (
 			<img
 				src={iconButton}

@@ -1,0 +1,25 @@
+.button-container {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+}
+
+.custom-card {
+	border-radius: 10px;
+	background-color: bisque;
+	height: 40vh;
+	width: 30%;
+	font-size: x-small;
+}
+
+.card-img {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.img-container {
+	width: 100%;
+	height: 50%;
+}
+

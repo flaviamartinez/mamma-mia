@@ -14,15 +14,14 @@ const Navbar = () => {
 
 
   return (
-	<nav>
+	<nav className="custom-nav">
 		<p>Pizzeria Mamma Mia</p>
-		<Button iconButton={homeIcon} textButton="Home" displayButton= {true}/>
+		<Button iconButton={homeIcon} textButton="Home" displayButton={true}/>
 		<Button iconButton={profileIcon} textButton="Profile" displayButton={token}/>
 		<Button iconButton={logoutIcon} textButton="Logout" displayButton={token}/>
 		<Button iconButton={loginIcon} textButton="Login" displayButton={!token}/>
 		<Button iconButton={registerIcon} textButton="Register" displayButton={!token}/>
 		<Button iconButton={totalIcon} textButton={`$${total}`} displayButton={true}/>
-
 	</nav>
   )
 }

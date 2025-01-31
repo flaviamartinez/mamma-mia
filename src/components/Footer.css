@@ -1,0 +1,7 @@
+.custom-footer {
+	background-color: grey;
+	color: white;
+	height: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+}

@@ -1,4 +1,8 @@
+.custom-button {
+	border-color: red
+}
+
 .button-icon {
 	width: 20px;
-	height: 20px
+	height: 20px;
 }
