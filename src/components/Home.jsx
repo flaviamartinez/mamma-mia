@@ -1,8 +1,10 @@
-
+import Header from './Header.jsx'
 
 const Home = () => {
   return (
-	<div>Home</div>
+	<>
+    <Header />
+  </>
   )
 }
 
