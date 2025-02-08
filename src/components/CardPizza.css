@@ -32,6 +32,7 @@
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
+	color: rgb(0, 0, 0);
 }
 
 .card-img {
