@@ -15,6 +15,7 @@
 
 .home-wrapper {
   flex: 1;
+  justify-items: center ;
 }
 
 .footer-wrapper {
