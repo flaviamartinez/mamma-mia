@@ -80,3 +80,7 @@ p {
 	margin-block-end: 0;
 	padding: 7px 0 7px 0;
 }
+
+ul li::marker {
+	content: "-";
+}
