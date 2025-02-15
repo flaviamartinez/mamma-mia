@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
-import './Login.css'
+import styles from './Login.module.css'
 
 const Login = () => {
   const [users, setUsers] = useState({
@@ -41,10 +41,10 @@ const Login = () => {
     setUsers({ email: '', password: '' })
   }
   return (
-    <form onSubmit={handleSubmit} className='login-form'>
+    <form onSubmit={handleSubmit} className={styles.loginForm}>
       <h2>Login</h2>
 
-      <div className='input-container'>
+      <div className={styles.inputContainer}>
         <p>Email</p>
         <input
           type='email'
@@ -55,7 +55,7 @@ const Login = () => {
         />
       </div>
 
-      <div className='input-container'>
+      <div className={styles.inputContainer}>
         <p>Password</p>
         <input
           type='password'
@@ -66,7 +66,7 @@ const Login = () => {
         />
       </div>
 
-      <button type='submit' className='login-btn'>Login</button>
+      <button type='submit' className={styles.loginBtn}>Login</button>
     </form>
   )
 }

@@ -3,21 +3,21 @@
   height: 100%;
 }
 
-.app-container {
+.appContainer {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.navbar-wrapper {
+.navbarWrapper {
   flex: 0 0 auto;
 }
 
-.home-wrapper {
+.homeWrapper {
   flex: 1;
   justify-items: center ;
 }
 
-.footer-wrapper {
+.footerWrapper {
   flex: 0 0 auto;
 }

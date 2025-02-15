@@ -1,4 +1,4 @@
-.custom-nav{
+.customNav{
 	display: flex;
 	width: 100%;
 	background-color: #fc8c8b;
@@ -10,13 +10,13 @@
 	align-items: center;
 }
 
-.btn-wrapper {
+.btnWrapper {
 	display: flex;
 	justify-content: space-between;
 	flex: 1;
 }
 
-.btn-profile-wrapper {
+.btnProfileWrapper {
 	display: flex;
 	gap: 5px;
 }

@@ -1,8 +1,8 @@
-import './Footer.css'
+import styles from './Footer.module.css'
 
 const Footer = () => {
   return (
-    <footer className='custom-footer'>
+    <footer className={styles.customFooter}>
       ©2025 - Pizzeria Mamma Mia! - Todos los derechos reservados
     </footer>
   )

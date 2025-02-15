@@ -1,4 +1,4 @@
-import './App.css'
+import styles from './App.module.css'
 import Navbar from './layouts/Navbar'
 import Home from './layouts/Home'
 import Footer from './components/Footer'
@@ -8,17 +8,17 @@ import Cart from './components/Cart'
 
 function App () {
   return (
-    <main className='app-container'>
-      <div className='nav-wrapper'>
+    <main className={styles.appContainer}>
+      <div className={styles.navWrapper}>
         <Navbar />
       </div>
-      <div className='home-wrapper'>
+      <div className={styles.homeWrapper}>
         {/* <Home /> */}
         {/* <Register /> */}
         {/* <Login /> */}
         <Cart />
       </div>
-      <div className='footer-wrapper'>
+      <div className={styles.footerWrapper}>
         <Footer />
       </div>
     </main>

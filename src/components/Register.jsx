@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
-import './Register.css'
+import styles from './Register.module.css'
 
 const Register = () => {
   const [users, setUsers] = useState(
@@ -51,22 +51,22 @@ const Register = () => {
     setUsers({ email: '', password: '', confirmPassword: '' })
   }
   return (
-    <form onSubmit={handleSubmit} className='register-form'>
+    <form onSubmit={handleSubmit} className={styles.registerForm}>
       <h2>Register</h2>
-      <div className='input-container'>
+      <div className={styles.inputContainer}>
         <p>Email</p>
         <input type='email' name='email' placeholder='Enter your email' value={users.email} onChange={handleChange} />
       </div>
-      <div className='input-container'>
+      <div className={styles.inputContainer}>
         <p>Password</p>
         <input type='password' name='password' value={users.password} placeholder='Enter your password' onChange={handleChange} />
       </div>
-      <div className='input-container'>
+      <div className={styles.inputContainer}>
         <p>Confirm Password</p>
         <input type='password' name='confirmPassword' placeholder='Confirm your password' value={users.confirmPassword} onChange={handleChange} />
       </div>
 
-      <button type='submit' className='register-btn'>Register</button>
+      <button type='submit' className={styles.registerBtn}>Register</button>
     </form>
   )
 }

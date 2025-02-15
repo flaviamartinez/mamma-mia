@@ -1,4 +1,4 @@
-import './Navbar.css'
+import styles from './Navbar.module.css'
 import Button from '../components/Button'
 
 const Navbar = () => {
@@ -6,10 +6,10 @@ const Navbar = () => {
   const token = false
 
   return (
-    <nav className='custom-nav'>
+    <nav className={styles.customNav}>
       <p>Pizzeria Mamma Mia</p>
-      <div className='btn-wrapper'>
-        <div className='btn-profile-wrapper'>
+      <div className={styles.btnWrapper}>
+        <div className={styles.btnProfileWrapper}>
           <Button textButton='🍕 Home' displayButton />
           <Button textButton='🔓 Profile' displayButton={token} />
           <Button textButton='🔒 Logout' displayButton={token} />

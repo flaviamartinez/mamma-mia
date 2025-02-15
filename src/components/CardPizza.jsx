@@ -1,23 +1,24 @@
-import './CardPizza.css'
+import styles from './CardPizza.module.css'
 
-const CardPizza = ({ name, price, ingredients, img }) => {
+const CardPizza = ({ name, price, ingredients, img, desc }) => {
   return (
-    <div className='custom-card'>
-      <div className='img-container'>
-        <img src={img} alt={`${name} image`} className='card-img' />
+    <div className={styles.customCard}>
+      <div className={styles.imgContainer}>
+        <img src={img} alt={`${name} image`} className={styles.cardImg} />
       </div>
-      <div className='description-container'>
-        <h2 className='title'>Pizza {name}</h2>
-        <div className='ingredients-container'>
+      <div className={styles.descriptionContainer}>
+        <h2 className={styles.title}>Pizza {name}</h2>
+        <p className={styles.desc}>{desc}</p>
+        <div className={styles.ingredientsContainer}>
           <p>🍕 Ingredientes:</p>
           <ul>
             {ingredients.map((ingredient) => (<li key={ingredient}>{ingredient}</li>))}
           </ul>
         </div>
-        <h3 className='price'>{`Precio: $${price.toLocaleString('es-CL')}`}</h3>
-        <div className='button-container'>
-          <button className='custom-card-button'>Ver Más 👀</button>
-          <button className='custom-card-button'>Añadir 🛒</button>
+        <h3 className={styles.price}>{`Precio: $${price.toLocaleString('es-CL')}`}</h3>
+        <div className={styles.buttonContainer}>
+          <button className={styles.customCardButton}>Ver Más 👀</button>
+          <button className={styles.customCardButton}>Añadir 🛒</button>
         </div>
       </div>
     </div>

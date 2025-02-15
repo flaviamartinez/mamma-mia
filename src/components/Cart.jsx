@@ -1,16 +1,16 @@
 import { pizzaCart } from '../assets/data/pizzas'
 import CartItem from './CartItem'
-import './Cart.css'
+import styles from './Cart.module.css'
 import { useState, useEffect } from 'react'
 
+const initialTotal = pizzaCart.reduce((acc, item) =>
+  acc + (Number(item.count) * Number(item.price))
+, 0)
+
 const Cart = () => {
-  const initialTotal = pizzaCart.reduce((acc, item) =>
-    acc + (Number(item.count) * Number(item.price))
-  , 0)
+  const [cart, setCart] = useState(pizzaCart)
 
   const [total, setTotal] = useState(initialTotal)
-
-  const [cart, setCart] = useState(pizzaCart)
 
   const updateCart = (id, change) => {
     setCart((prev) =>
@@ -34,9 +34,9 @@ const Cart = () => {
   }, [cart])
 
   return (
-    <div className='custom-cart'>
+    <div className={styles.customCart}>
       <h2>Detalles del pedido:</h2>
-      <div>
+      <div className={styles.itemsContainer}>
         {cart.map((item) => (
           <CartItem
             key={item.id}
@@ -50,8 +50,8 @@ const Cart = () => {
           />
         ))}
       </div>
-      <h2>Total: {total}</h2>
-      <button>Pagar</button>
+      <h2>Total: ${total.toLocaleString('es-CL')}</h2>
+      <button className={styles.customButton}>Pagar</button>
     </div>
   )
 }

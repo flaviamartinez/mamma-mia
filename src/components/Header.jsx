@@ -1,8 +1,8 @@
-import './Header.css'
+import styles from './Header.module.css'
 
 const Header = () => {
   return (
-    <header className='custom-header'>
+    <header className={styles.customHeader}>
       <h1>Pizzeria Mamma Mia</h1>
       <p>¡Tenemos las mejores pizzas que podrás encontrar!</p>
     </header>

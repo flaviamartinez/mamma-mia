@@ -1,4 +1,4 @@
-.custom-button {
+.customButton {
 	border-radius: 5px;
 	border: none;
 	display: flex;
@@ -9,12 +9,7 @@
 	color: rgba(255, 255, 255, 0.87);
 }
 
-.custom-button:hover{
+.customButton:hover{
 	background-color:  #fa716f;
 	font-weight: bold;
-}
-
-.button-icon {
-	width: 20px;
-	height: 20px;
 }
