@@ -11,8 +11,8 @@
 }
 
 .customButton {
-	height: 50%;
-	width: 50%;
+	height: 30px;
+	width: 30%;
 	border-radius: 5px;
 	padding: 0 6px 0 6px;
 	background-color: #ffffff;
@@ -20,4 +20,11 @@
 	border: solid 1px rgb(150, 149, 149);
 	font-size: 1.5vh;
 	color: black;
+}
+
+.customButton:hover{
+	background-color: #fc8c8b;
+	font-weight: bold;
+	border: none;
+	color: #ffffff;
 }
