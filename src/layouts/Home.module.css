@@ -1,13 +1,11 @@
 .cardContainer {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	gap: 30px;
 	justify-content: center;
-	padding: 30px 0;
+	padding: 30px 30px;
 	box-sizing: border-box;
 	width: 100%;
-	max-width: 1200px; /* Opcional: para limitar el ancho máximo */
-	margin: auto; /* Para centrar la grilla */
 }
 
 .homeContainer {

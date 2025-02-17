@@ -16,7 +16,7 @@ const Cart = () => {
     setCart((prev) =>
       prev.map((item) =>
         item.id === id
-          ? { ...item, count: Math.max(item.count + change, 1) }
+          ? { ...item, count: item.count + change }
           : item
       ))
   }
@@ -28,9 +28,9 @@ const Cart = () => {
   useEffect(() => {
     const newTotal = cart.reduce((acc, item) => acc + (Number(item.count) * Number(item.price))
       , 0)
-    console.log(newTotal)
+    // console.log(newTotal)
     setTotal(newTotal)
-    console.log('Estado del carrito actualizado:', cart)
+    // console.log('Estado del carrito actualizado:', cart)
   }, [cart])
 
   return (
