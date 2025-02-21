@@ -1,0 +1,14 @@
+.cardContainer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	gap: 30px;
+	justify-content: center;
+	padding: 30px 30px;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.homeContainer {
+	height: 100%;
+	width: 100%;
+}

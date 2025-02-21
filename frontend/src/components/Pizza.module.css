@@ -1,0 +1,17 @@
+.pizzaContainer {
+	color: #000000;
+	height: 80%;
+	width: 50%;
+}
+
+.imgContainer {
+	width: 70%;
+	height: auto;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	object-fit: cover;
+}
