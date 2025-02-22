@@ -17,6 +17,9 @@
   flex: 1;
   justify-items: center;
   min-height: calc(100vh - 80px - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footerWrapper {

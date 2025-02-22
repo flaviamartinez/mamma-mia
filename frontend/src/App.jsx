@@ -1,6 +1,6 @@
 import styles from './App.module.css'
 import Navbar from './layouts/Navbar'
-// import Home from './layouts/Home'
+import Home from './layouts/Home'
 import Footer from './components/Footer'
 // import Register from './components/Register'
 // import Login from './components/Login'
