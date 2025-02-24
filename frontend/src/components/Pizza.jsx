@@ -33,7 +33,7 @@ const Pizza = () => {
         <div className={styles.ingredientsContainer}>
           <p>🍕 Ingredientes: {pizza.ingredients.join(', ')}</p>
         </div>
-        <button className={styles.customButton}>Añadir 🛒 <p className={styles.price}>{`$ ${pizza.price.toLocaleString('es-CL')}`}</p></button>
+        <button className={styles.customButton}>Añadir <p className={styles.price}>{`$ ${pizza.price.toLocaleString('es-CL')}`}</p></button>
       </div>
     </div>
   )
