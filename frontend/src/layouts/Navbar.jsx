@@ -10,14 +10,14 @@ const Navbar = () => {
       <p>Pizzeria Mamma Mia</p>
       <div className={styles.btnWrapper}>
         <div className={styles.btnProfileWrapper}>
-          <Button textButton='🍕 Home' displayButton />
-          <Button textButton='🔓 Profile' displayButton={token} />
+          <Button textButton='🍕 Home' to='/' displayButton />
+          <Button textButton='🔓 Profile' to='/profile' displayButton={token} />
           <Button textButton='🔒 Logout' displayButton={token} />
-          <Button textButton='🔐 Login' displayButton={!token} />
-          <Button textButton='🔐 Register' displayButton={!token} />
+          <Button textButton='🔐 Login' to='/login' displayButton={!token} />
+          <Button textButton='🔐 Register' to='/register' displayButton={!token} />
         </div>
         <div>
-          <Button textButton={`🛒 $ ${total.toLocaleString('es-CL')}`} displayButton />
+          <Button textButton={`🛒 $ ${total.toLocaleString('es-CL')}`} to='/cart' displayButton />
         </div>
       </div>
     </nav>

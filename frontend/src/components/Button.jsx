@@ -1,13 +1,14 @@
 import styles from './Button.module.css'
+import { Link } from 'react-router-dom'
 
-const Button = ({ textButton, displayButton }) => {
+const Button = ({ textButton, displayButton, to }) => {
   if (!displayButton) {
     return null
   }
   return (
-    <button className={styles.customButton}>
+    <Link to={to} className={styles.customButton}>
       {textButton}
-    </button>
+    </Link>
   )
 }
 

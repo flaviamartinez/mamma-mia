@@ -1,5 +1,5 @@
 import { pizzaCart } from '../assets/data/pizzas'
-import CartItem from './CartItem'
+import CartItem from '../components/CartItem'
 import styles from './Cart.module.css'
 import { useState, useEffect } from 'react'
 
