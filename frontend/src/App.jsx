@@ -26,7 +26,7 @@ function App () {
             <Route path='/profile' element={<Profile />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/pizza/p001' element={<Pizza />} />
-            <Route path='/404' element={<NotFound />} />
+            <Route path='/*' element={<NotFound />} />
           </Routes>
         </div>
         <div className={styles.footerWrapper}>
