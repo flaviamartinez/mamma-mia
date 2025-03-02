@@ -1,0 +1,43 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 30%;
+	gap: 20px;
+	text-align: center;
+}
+
+.iconContainer {
+	width: 50%;
+	height: auto;
+}
+
+.icon {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.homeButton {
+	color: #000000;
+	display: inline-block;
+    padding: 10px 20px;
+    background-color: #fc8c8b;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+
+}
+
+.homeButton:hover {
+    font-weight: bold;
+	color: #ffffff;
+}
+
+.title {
+	margin-block-start: 0;
+	margin-block-end: 0;
+}
