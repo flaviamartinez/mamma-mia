@@ -1,6 +1,10 @@
 import styles from './CardPizza.module.css'
+import { CartContext } from '../store/CartContext.jsx'
+import { useContext } from 'react'
 
-const CardPizza = ({ name, price, ingredients, img, desc }) => {
+const CardPizza = ({ id, name, price, ingredients, img, desc }) => {
+  const { addItem } = useContext(CartContext)
+
   return (
     <div className={styles.customCard}>
       <div className={styles.imgContainer}>
@@ -18,7 +22,7 @@ const CardPizza = ({ name, price, ingredients, img, desc }) => {
         <h3 className={styles.price}>{`Precio: $${price.toLocaleString('es-CL')}`}</h3>
         <div className={styles.buttonContainer}>
           <button className={styles.customCardButton}>Ver Más 👀</button>
-          <button className={styles.customCardButton}>Añadir 🛒</button>
+          <button className={styles.customCardButton} onClick={() => addItem(id, name, price, img)}>Añadir 🛒</button>
         </div>
       </div>
     </div>

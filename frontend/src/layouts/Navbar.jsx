@@ -1,8 +1,10 @@
 import styles from './Navbar.module.css'
 import Button from '../components/Button'
+import { CartContext } from '../store/CartContext'
+import { useContext } from 'react'
 
 const Navbar = () => {
-  const total = 25000
+  const { total } = useContext(CartContext)
   const token = false
 
   return (

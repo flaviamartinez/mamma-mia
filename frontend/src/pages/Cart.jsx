@@ -1,37 +1,10 @@
-import { pizzaCart } from '../assets/data/pizzas'
 import CartItem from '../components/CartItem'
 import styles from './Cart.module.css'
-import { useState, useEffect } from 'react'
-
-const initialTotal = pizzaCart.reduce((acc, item) =>
-  acc + (Number(item.count) * Number(item.price))
-, 0)
+import { useContext } from 'react'
+import { CartContext } from '../store/CartContext'
 
 const Cart = () => {
-  const [cart, setCart] = useState(pizzaCart)
-
-  const [total, setTotal] = useState(initialTotal)
-
-  const updateCart = (id, change) => {
-    setCart((prev) =>
-      prev.map((item) =>
-        item.id === id
-          ? { ...item, count: item.count + change }
-          : item
-      ))
-  }
-
-  const removeItem = (id) => {
-    setCart((prev) => prev.filter((item) => item.id !== id))
-  }
-
-  useEffect(() => {
-    const newTotal = cart.reduce((acc, item) => acc + (Number(item.count) * Number(item.price))
-      , 0)
-    // console.log(newTotal)
-    setTotal(newTotal)
-    // console.log('Estado del carrito actualizado:', cart)
-  }, [cart])
+  const { cart, total, updateCart, removeItem } = useContext(CartContext)
 
   return (
     <div className={styles.customCart}>

@@ -24,7 +24,7 @@ const Home = () => {
     <div className={styles.homeContainer}>
       <Header />
       <div className={styles.cardContainer}>
-        {pizzas.map((pizza) => (<CardPizza key={pizza.id} name={pizza.name} price={pizza.price} ingredients={pizza.ingredients} img={pizza.img} desc={pizza.desc} />))}
+        {pizzas.map((pizza) => (<CardPizza key={pizza.id} id={pizza.id} name={pizza.name} price={pizza.price} ingredients={pizza.ingredients} img={pizza.img} desc={pizza.desc} />))}
       </div>
     </div>
   )
