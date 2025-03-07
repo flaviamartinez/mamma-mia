@@ -11,13 +11,14 @@ import NotFound from './pages/NotFound'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import CartContextProvider from './store/CartContext'
+import { Toaster, toast } from 'sonner'
 
 function App () {
   return (
     <BrowserRouter>
       <CartContextProvider>
         <main className={styles.appContainer}>
-          <div className={styles.navWrapper}>
+          <div className={styles.navbarWrapper}>
             <Navbar />
           </div>
           <div className={styles.homeWrapper}>
@@ -35,6 +36,7 @@ function App () {
             <Footer />
           </div>
         </main>
+        <Toaster richColors position='bottom-right' />
       </CartContextProvider>
     </BrowserRouter>
   )
