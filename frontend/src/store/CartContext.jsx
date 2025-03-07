@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react'
 import { pizzaCart } from '../assets/data/pizzas'
+import { Toaster, toast } from 'sonner'
 
 export const CartContext = createContext()
 
@@ -39,6 +40,7 @@ const CartContextProvider = ({ children }) => {
       const newItem = { id, name, price, count: 1, img }
       setCart(prevCart => [...prevCart, newItem])
     }
+    toast.success(`Pizza ${name} añadida al carro`, { duration: 2000 })
   }
 
   useEffect(() => {
