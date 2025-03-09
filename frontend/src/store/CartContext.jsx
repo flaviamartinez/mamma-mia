@@ -1,13 +1,13 @@
-import { createContext, useState, useEffect } from 'react'
+import { createContext, useState, useEffect, useMemo } from 'react'
 import { pizzaCart } from '../assets/data/pizzas'
-import { Toaster, toast } from 'sonner'
+import { toast } from 'sonner'
 
 export const CartContext = createContext()
 
 const CartContextProvider = ({ children }) => {
-  const initialTotal = pizzaCart.reduce((acc, item) =>
+  const initialTotal = useMemo(() => pizzaCart.reduce((acc, item) =>
     acc + (Number(item.count) * Number(item.price))
-  , 0)
+  , 0), [])
 
   const [cart, setCart] = useState(pizzaCart)
 
