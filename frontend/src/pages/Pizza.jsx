@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Pizza.module.css'
+import { useParams, useNavigate } from 'react-router-dom'
 
 const Pizza = () => {
   const [pizza, setPizza] = useState(null)
+  const { id } = useParams()
+  const navigate = useNavigate()
 
   const getPizza = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/pizzas/p001')
+      const res = await fetch(`http://localhost:5000/api/pizzas/${id}`)
+      if (!res.ok) {
+        throw new Error('Error: Pizza not found')
+      }
       const data = await res.json()
       return setPizza(data)
     } catch (e) {
       console.error(e)
+      navigate('/not-found', { replace: true })
     }
   }
 

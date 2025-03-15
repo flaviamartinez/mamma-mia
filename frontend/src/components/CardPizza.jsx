@@ -1,9 +1,16 @@
 import styles from './CardPizza.module.css'
 import { CartContext } from '../store/CartContext.jsx'
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const CardPizza = ({ id, name, price, ingredients, img, desc }) => {
   const { addItem } = useContext(CartContext)
+
+  const navigate = useNavigate()
+
+  const goPizza = () => {
+    navigate(`/pizza/${id}`)
+  }
 
   return (
     <div className={styles.customCard}>
@@ -21,7 +28,7 @@ const CardPizza = ({ id, name, price, ingredients, img, desc }) => {
         </div>
         <h3 className={styles.price}>{`Precio: $${price.toLocaleString('es-CL')}`}</h3>
         <div className={styles.buttonContainer}>
-          <button className={styles.customCardButton}>Ver Más 👀</button>
+          <button className={styles.customCardButton} onClick={goPizza}>Ver Más 👀</button>
           <button className={styles.customCardButton} onClick={() => addItem(id, name, price, img)}>Añadir 🛒</button>
         </div>
       </div>
