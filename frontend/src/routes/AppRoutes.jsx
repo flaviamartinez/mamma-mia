@@ -2,13 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import ProtectedRoute from '../components/ProtectedRoute'
 import PublicRoute from '../components/PublicRoutes'
-import Home from '../pages/Home'
-import Register from '../pages/Register'
-import Login from '../pages/Login'
-import Cart from '../pages/Cart'
-import Pizza from '../pages/Pizza'
-import Profile from '../pages/Profile'
-import NotFound from '../pages/NotFound'
+import { Home, Register, Login, Cart, Pizza, Profile, NotFound } from '../pages'
 
 const AppRoutes = () => {
   return (
