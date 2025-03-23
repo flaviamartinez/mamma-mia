@@ -25,6 +25,9 @@ const Cart = () => {
         ))}
       </div>
       <h2>Total: ${total.toLocaleString('es-CL')}</h2>
+      {!token && (
+        <p style={{ color: '#b00020' }}>Debes iniciar sesión para pagar</p>
+      )}
       <button className={styles.customButton} disabled={!token} onClick={checkout}>Pagar</button>
     </div>
   )

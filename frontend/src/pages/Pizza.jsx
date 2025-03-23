@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './Pizza.module.css'
 import { useParams, useNavigate } from 'react-router-dom'
+import { CartContext } from '../store/CartContext'
 
 const Pizza = () => {
   const [pizza, setPizza] = useState(null)
   const { id } = useParams()
   const navigate = useNavigate()
+  const { addItem } = useContext(CartContext)
 
   const getPizza = async () => {
     try {
@@ -40,7 +42,7 @@ const Pizza = () => {
         <div className={styles.ingredientsContainer}>
           <p>🍕 Ingredientes: {pizza.ingredients.join(', ')}</p>
         </div>
-        <button className={styles.customButton}>Añadir <p className={styles.price}>{`$ ${pizza.price.toLocaleString('es-CL')}`}</p></button>
+        <button className={styles.customButton} onClick={() => addItem(id, pizza.name, pizza.price, pizza.img)}>Añadir <p className={styles.price}>{`$ ${pizza.price.toLocaleString('es-CL')}`}</p></button>
       </div>
     </div>
   )

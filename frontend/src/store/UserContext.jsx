@@ -1,5 +1,6 @@
 import { createContext, useState } from 'react'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 export const UserContext = createContext()
 
@@ -22,7 +23,15 @@ const UserContextProvider = ({ children }) => {
       setToken(user.data.token)
       localStorage.setItem('email', user.data.email)
     } catch (error) {
-      console.error(error)
+      if (error.response && error.response.data && error.response.data.error) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: error.response.data.error
+        })
+      } else {
+        console.log('Error de conexión con el servidor')
+      }
     }
   }
 

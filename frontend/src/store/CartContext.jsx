@@ -2,6 +2,7 @@ import { createContext, useState, useEffect, useMemo } from 'react'
 import { pizzaCart } from '../assets/data/pizzas'
 import { toast } from 'sonner'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 export const CartContext = createContext()
 
@@ -10,7 +11,7 @@ const CartContextProvider = ({ children }) => {
     acc + (Number(item.count) * Number(item.price))
   , 0), [])
 
-  const [cart, setCart] = useState(pizzaCart)
+  const [cart, setCart] = useState([])
 
   const [total, setTotal] = useState(initialTotal)
 
@@ -57,7 +58,11 @@ const CartContextProvider = ({ children }) => {
       )
 
       if (res.status === 200) {
-        console.log('Pago exitoso')
+        Swal.fire({
+          title: 'Pago exitoso',
+          icon: 'success'
+        })
+        setCart([])
       }
     } catch (error) {
       console.log(error)
