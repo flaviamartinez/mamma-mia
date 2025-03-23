@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Swal from 'sweetalert2'
 import styles from './Login.module.css'
+import { UserContext } from '../store/UserContext'
 
 const Login = () => {
   const [users, setUsers] = useState({
@@ -8,7 +9,9 @@ const Login = () => {
     password: ''
   })
 
-  const handleChange = (e) => {
+  const { auth } = useContext(UserContext)
+
+  const handleChange = async (e) => {
     setUsers({ ...users, [e.target.name]: e.target.value })
   }
 
@@ -33,10 +36,12 @@ const Login = () => {
       return
     }
 
-    Swal.fire({
-      title: 'Registro exitoso',
-      icon: 'success'
-    })
+    await auth(email, password, 'login')
+
+    // Swal.fire({
+    //   title: 'Registro exitoso',
+    //   icon: 'success'
+    // })
 
     setUsers({ email: '', password: '' })
   }

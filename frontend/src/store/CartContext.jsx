@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect, useMemo } from 'react'
 import { pizzaCart } from '../assets/data/pizzas'
 import { toast } from 'sonner'
+import axios from 'axios'
 
 export const CartContext = createContext()
 
@@ -43,6 +44,26 @@ const CartContextProvider = ({ children }) => {
     toast.success(`Pizza ${name} añadida al carro`, { duration: 2000 })
   }
 
+  const checkout = async () => {
+    try {
+      const res = await axios.post(
+        'http://localhost:5000/api/checkouts',
+        { cart },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('token')}`
+          }
+        }
+      )
+
+      if (res.status === 200) {
+        console.log('Pago exitoso')
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
     updateTotal()
   }, [cart])
@@ -53,7 +74,8 @@ const CartContextProvider = ({ children }) => {
     updateCart,
     removeItem,
     updateTotal,
-    addItem
+    addItem,
+    checkout
   }
 
   return <CartContext.Provider value={stateGlobal}>{children}</CartContext.Provider>

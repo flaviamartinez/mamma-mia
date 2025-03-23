@@ -1,17 +1,54 @@
 import { createContext, useState } from 'react'
+import axios from 'axios'
 
 export const UserContext = createContext()
 
 const UserContextProvider = ({ children }) => {
-  const [token, setToken] = useState(true)
+  const [token, setToken] = useState(null)
+  const [profile, setProfile] = useState(null)
 
   const logout = () => {
-    setToken(false)
+    setToken(null)
+    localStorage.removeItem('token')
+    localStorage.removeItem('email')
+  }
+
+  const auth = async (email, password, route) => {
+    try {
+      const URL = `http://localhost:5000/api/auth/${route}`
+      const payload = { email, password }
+      const user = await axios.post(URL, payload)
+      localStorage.setItem('token', user.data.token)
+      setToken(user.data.token)
+      localStorage.setItem('email', user.data.email)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const fetchProfile = async () => {
+    if (token) {
+      try {
+        const res = await axios.get('http://localhost:5000/api/auth/me', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        console.log(res)
+        setProfile(res.data.email)
+        console.log(profile)
+      } catch (error) {
+        console.error(error)
+      }
+    }
   }
 
   const stateGlobal = {
     token,
-    logout
+    profile,
+    logout,
+    auth,
+    fetchProfile
   }
 
   return <UserContext.Provider value={stateGlobal}>{children}</UserContext.Provider>

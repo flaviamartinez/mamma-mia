@@ -5,7 +5,7 @@ import { CartContext } from '../store/CartContext'
 import { UserContext } from '../store/UserContext'
 
 const Cart = () => {
-  const { cart, total, updateCart, removeItem } = useContext(CartContext)
+  const { cart, total, updateCart, removeItem, checkout } = useContext(CartContext)
   const { token } = useContext(UserContext)
   return (
     <div className={styles.customCart}>
@@ -25,7 +25,7 @@ const Cart = () => {
         ))}
       </div>
       <h2>Total: ${total.toLocaleString('es-CL')}</h2>
-      <button className={styles.customButton} disabled={!token}>Pagar</button>
+      <button className={styles.customButton} disabled={!token} onClick={checkout}>Pagar</button>
     </div>
   )
 }
