@@ -5,13 +5,13 @@ import Swal from 'sweetalert2'
 export const UserContext = createContext()
 
 const UserContextProvider = ({ children }) => {
-  const [token, setToken] = useState(null)
   const [profile, setProfile] = useState(null)
+  const [token, setToken] = useState(localStorage.getItem('token'))
 
   const logout = () => {
-    setToken(null)
     localStorage.removeItem('token')
     localStorage.removeItem('email')
+    setToken(null)
   }
 
   const auth = async (email, password, route) => {
@@ -20,8 +20,8 @@ const UserContextProvider = ({ children }) => {
       const payload = { email, password }
       const user = await axios.post(URL, payload)
       localStorage.setItem('token', user.data.token)
-      setToken(user.data.token)
       localStorage.setItem('email', user.data.email)
+      setToken(localStorage.getItem('token'))
     } catch (error) {
       if (error.response && error.response.data && error.response.data.error) {
         Swal.fire({
@@ -43,9 +43,7 @@ const UserContextProvider = ({ children }) => {
             Authorization: `Bearer ${token}`
           }
         })
-        console.log(res)
         setProfile(res.data.email)
-        console.log(profile)
       } catch (error) {
         console.error(error)
       }
