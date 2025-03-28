@@ -20,11 +20,10 @@
 }
 
 .homeButton {
-	color: #000000;
 	display: inline-block;
     padding: 10px 20px;
     background-color: #fc8c8b;
-    color: white;
+    color: #ffffff;
     text-align: center;
     border: none;
     border-radius: 5px;

@@ -24,11 +24,12 @@
 	border: none;
 	border-radius: 5px;
 	height: 3vh;
+	color: #ffffff;
+	background-color: #fc8c8b;
 }
 
 .loginBtn:hover {
-	background-color: #fc8c8b;
-	color: #ffffff;
+	font-weight: bold;
 }
 
 .loginForm h2 {
